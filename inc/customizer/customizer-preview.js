@@ -310,5 +310,62 @@
 			$('.archive-header').css( 'background', 'transparent url(' +newval+ ') repeat scroll center center / cover' );
 		} );
 	} );
+
+	// Contact Me Section > Settings > Section Title
+	wp.customize( 'latte_contactme_title', function( value ) {
+		value.bind( function( newval ) {
+			$('.about .about-header h2').text( newval );
+		} );
+	} );
+
+	// Contact Me Section > Settings > Section Subtitle
+	wp.customize( 'latte_contactme_subtitle', function( value ) {
+		value.bind( function( newval ) {
+			$('.contactme .contactme-header h3').text( newval );
+		} );
+	} );
+
+	// Contact Me Section > Content > Image
+	wp.customize( 'latte_contactme_avatar', function( value ) {
+		value.bind( function( newval ) {
+			if ( newval == '' ) {
+				$('.contactme .contactme-image').css( 'display', 'none' );
+				$('.contactme .col-md-7').attr( 'class', 'cold-md-12' );
+			} else {
+				$('.contactme .contactme-image').removeClass( 'customizer-hidden' );
+				$('.contactme .about-image').css( 'display', 'block' );
+				$('.contactme .col-md-12').attr( 'class', 'cold-md-7' );
+				$('.contactme .contactme-image').attr( 'src', newval );
+			}
+		} );
+	} );
+
+	// Contact Me Section > Content > Name
+	wp.customize( 'latte_contactme_name', function( value ) {
+		value.bind( function( newval ) {
+			$('.contactme h3.name').text( newval );
+		} );
+	} );
+
+	// Contact Me Section > Content > Position
+	wp.customize( 'latte_contactme_position', function( value ) {
+		value.bind( function( newval ) {
+			$('.contactme span.text-muted').text( newval );
+		} );
+	} );
+
+	// Contact Me Section > Content > Content
+	wp.customize( 'latte_contactme_content', function( value ) {
+		value.bind( function( newval ) {
+			$('.contactme div.lead').html( newval );
+		} );
+	} );
+
+	// Contact Me Section > Colors > Background Color
+	wp.customize( 'latte_contactme_background_color', function( value ) {
+		value.bind( function( newval ) {
+			$('.contactme').css( 'background', newval );
+		} );
+	} );
 	
 } )( jQuery );

@@ -724,6 +724,40 @@ img.alignright,
 	font-size: 14px;
 }
 
+/**
+ * Section 8 - Contact Me
+ */
+
+ 
+.contactme {
+	width: 100%;
+	background: #F5F5F5;
+}
+.contactme .row {
+	padding: 50px 75px;
+}
+.contactme .contactme-header {
+	padding-bottom: 50px;
+	text-align: center;
+}
+.contactme .contactme-header h2 {
+	font-size: 40px;
+	font-family: "Sanchez",sans-serif;
+	font-weight: bold;
+	word-break: keep-all;
+}
+.contactme .contactme-header h3 {
+	color: #9F8E8E;
+	font-size: 15px;
+	margin-top: 0;
+}
+.contactme .lead {
+	margin-top: 20px;
+}
+.contactme .customizer-hidden {
+	display: none;
+}
+
 /*
  * Footer
  */
