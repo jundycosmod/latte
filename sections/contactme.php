@@ -1,10 +1,6 @@
 <?php
-$latte_contactme_title = get_theme_mod('latte_contactme_title', __('About Me', 'latte'));
-$latte_contactme_subtitle = get_theme_mod('latte_contactme_subtitle', __('Here are some things that you should know contactme me.', 'latte'));
-$latte_contactme_avatar = get_theme_mod('latte_contactme_avatar', get_template_directory_uri() . '/assets/images/383x383.png');
-$latte_contactme_name = get_theme_mod('latte_contactme_name', __('John Doe', 'latte'));
-$latte_contactme_position = get_theme_mod('latte_contactme_position', __('Web Designer', 'latte'));
-$latte_contactme_content = get_theme_mod('latte_contactme_content', __('<p>Latte is a one-page parallax WordPress theme for developers, designers & freelancers, to showcase their profile and portfolio.</p> <p>It comes with many options, including services section, portfolio, maps, contact form, testimonials, pricing tables, and more.</p> <p>Plus, it\'s easy to customize! You don\'t need a page builder or a drag & drop editor. Every thing can be customized straight from the WordPress Customizer.</p>', 'latte'));
+$latte_contactme_title = get_theme_mod('latte_contactme_title', __('Contact Me', 'latte'));
+$latte_contactme_subtitle = get_theme_mod('latte_contactme_subtitle', __('Keep in Touch!', 'latte'));
 ?>
 
 		<section class="contactme" id="contactme">
@@ -20,29 +16,49 @@ $latte_contactme_content = get_theme_mod('latte_contactme_content', __('<p>Latte
 					<?php endif;?>
 					</header>
 				<?php endif;?>
-				<?php if (!empty($latte_contactme_avatar)): ?>
-					<div data-sr="enter left wait 0.25s" class="col-md-5">
-						<img src="<?php echo esc_url($latte_contactme_avatar); ?>" class="contactme-image img-responsive"/>
-					</div>
-				<?php elseif (empty($latte_contactme_avatar) && is_customize_preview()): ?>
-					<div data-sr="enter left wait 0.25s" class="col-md-5">
-						<img src="<?php echo esc_url($latte_contactme_avatar); ?>" class="contactme-image img-responsive customizer-hidden"/>
-					</div>
-				<?php endif;?>
-				<?php if (!empty($latte_contactme_avatar)): ?>
-					<div data-sr="enter right wait 0.25s" class="col-md-7">
-				<?php else: ?>
-					<div data-sr="enter top wait 0.25s" class="col-md-12">
-				<?php endif;?>
-					<?php if (!empty($latte_contactme_name) || is_customize_preview()): ?>
-						<h3 class="name"><?php echo esc_html($latte_contactme_name); ?></h3>
-					<?php endif;?>
-					<?php if (!empty($latte_contactme_position) || is_customize_preview()): ?>
-						<span class="text-muted"><?php echo esc_html($latte_contactme_position); ?></span>
-					<?php endif;?>
-					<?php if (!empty($latte_contactme_content) || is_customize_preview()): ?>
-						<div class="lead"><?php echo wp_kses_post($latte_contactme_content); ?></div>
-					<?php endif;?>
+					<div class="col-md-12">
+					<?php
+if (is_active_sidebar('contactme-widgets')):
+	dynamic_sidebar('contactme-widgets');
+else:
+	the_widget('latte_contactme_widget', array(
+		'title' => esc_html__('HTML', 'latte'),
+		'type' => 0,
+		'icon' => 'fa-html5',
+		'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'latte'),
+	));
+	the_widget('latte_contactme_widget', array(
+		'title' => esc_html__('CSS', 'latte'),
+		'type' => 0,
+		'icon' => 'fa-css3',
+		'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'latte'),
+	));
+	the_widget('latte_contactme_widget', array(
+		'title' => esc_html__('WordPress', 'latte'),
+		'type' => 0,
+		'icon' => 'fa-wordpress',
+		'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'latte'),
+	));
+	the_widget('latte_contactme_widget', array(
+		'title' => esc_html__('Linux', 'latte'),
+		'type' => 0,
+		'icon' => 'fa-linux',
+		'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'latte'),
+	));
+	the_widget('latte_contactme_widget', array(
+		'title' => esc_html__('SEO', 'latte'),
+		'type' => 0,
+		'icon' => 'fa-search',
+		'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'latte'),
+	));
+	the_widget('latte_contactme_widget', array(
+		'title' => esc_html__('Writing', 'latte'),
+		'type' => 0,
+		'icon' => 'fa-pencil',
+		'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'latte'),
+	));
+endif;
+?>
 					</div>
 				</div>
 			</div>

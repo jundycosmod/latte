@@ -8,6 +8,7 @@
 require_once trailingslashit(get_template_directory()) . '/inc/customizer/customizer.php';
 require_once trailingslashit(get_template_directory()) . '/inc/customizer/custom-css.php';
 require_once trailingslashit(get_template_directory()) . '/inc/widgets/latte-services.php';
+require_once trailingslashit(get_template_directory()) . '/inc/widgets/latte-contactme.php';
 require_once trailingslashit(get_template_directory()) . '/inc/widgets/latte-skills.php';
 require_once trailingslashit(get_template_directory()) . '/inc/other/post-formats.php';
 if (is_admin()) {
@@ -113,6 +114,15 @@ function latte_widgets_init() {
 	));
 
 	register_sidebar(array(
+		'name' => __('Contact Me Section', 'latte'),
+		'id' => 'contactme-widgets',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
+
+	register_sidebar(array(
 		'name' => __('Skills Section', 'latte'),
 		'id' => 'skills-widgets',
 		'before_widget' => '',
@@ -188,6 +198,7 @@ function latte_scripts() {
 		'latte_menu_display' => get_theme_mod('latte_menu_display'),
 		'latte_skills_display' => get_theme_mod('latte_skills_display'),
 		'latte_services_display' => get_theme_mod('latte_services_display'),
+		'latte_contactme_display' => get_theme_mod('latte_contactme_display'),
 		'latte_blogposts_display' => get_theme_mod('latte_blogposts_display'),
 	));
 }
