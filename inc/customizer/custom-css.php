@@ -74,7 +74,7 @@ function latte_custom_css() {
 <?php endif;?>
 <?php if (isset($latte_contactme_display) && $latte_contactme_display != 1): ?>
 <?php if (!empty($latte_contactme_background_color)): ?>
-.about {
+.contactme {
 	background: <?php echo esc_html($latte_contactme_background_color); ?>;
 }
 <?php endif;?>
