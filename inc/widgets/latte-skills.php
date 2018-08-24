@@ -32,7 +32,7 @@ class latte_skills_widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('percentage')); ?>"><?php esc_html_e('Percentage', 'latte');?></label>
-			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('percentage')); ?>" name="<?php echo esc_attr($this->get_field_name('percentage')); ?>" type="number" min="0" max="15" value="<?php if (!empty($instance['percentage'])): echo intval($instance['percentage']);endif;?>" />
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('percentage')); ?>" name="<?php echo esc_attr($this->get_field_name('percentage')); ?>" type="number" min="0" max="10" value="<?php if (!empty($instance['percentage'])): echo intval($instance['percentage']);endif;?>" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('titlecolor')); ?>"><?php esc_html_e('Title Color', 'latte');?></label>
@@ -67,7 +67,7 @@ class latte_skills_widget extends WP_Widget {
 		?>
 			<?php echo $before_widget; ?>
 					<div data-sr="ease-in-out wait 0.25s" class="col-md-6 col-sm-12 skill-box">
-						<div class="skillbar clearfix " data-percent="<?php if (!empty($instance['percentage'])): echo intval($instance['percentage']);endif;?> years">
+						<div class="skillbar clearfix " data-percent="<?php if (!empty($instance['percentage'])): echo intval(($instance['percentage'] / 10) * 100);endif;?>%">
 							<div class="skillbar-title" style="background: <?php if (!empty($instance['titlebackground'])): echo esc_html($instance['titlebackground']);endif;?>;"><span style="color:<?php if (!empty($instance['titlecolor'])): echo esc_html($instance['titlecolor']);endif;?>;"><?php if (!empty($instance['title'])): echo esc_html($instance['title']);endif;?></span></div>
 							<div class="skillbar-bar" style="background: <?php if (!empty($instance['barbackground'])): echo esc_html($instance['barbackground']);endif;?>;"></div>
 							<div class="skill-bar-percent"><?php if (!empty($instance['percentage'])): echo esc_html($instance['percentage']);endif;?> years</div>
