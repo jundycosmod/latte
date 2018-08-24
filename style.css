@@ -731,7 +731,8 @@ img.alignright,
  
 .contactme {
 	width: 100%;
-	background: #F5F5F5;
+	background: rgba(0, 0, 0, 0.7);
+	color: #FFF;
 }
 .contactme .row {
 	padding: 50px 75px;
@@ -747,7 +748,7 @@ img.alignright,
 	word-break: keep-all;
 }
 .contactme .contactme-header h3 {
-	color: #9F8E8E;
+	color: #999;
 	font-size: 15px;
 	margin-top: 0;
 }
