@@ -18,7 +18,7 @@ function latte_custom_css() {
 	$latte_subscribe_background_color = get_theme_mod('latte_subscribe_background_color', 'rgba(0, 0, 0, 0.7)');
 	$latte_skills_background_color = get_theme_mod('latte_skills_background_color', '#F5F5F5');
 	$latte_blogposts_background_color = get_theme_mod('latte_blogposts_background_color', '#F5F5F5');
-	$latte_contactme_background_color = get_theme_mod('latte_contactme_background_color', '#F5F5F5');
+	$latte_contactme_background_color = get_theme_mod('latte_contactme_background_color', 'rgba(0, 0, 0, 0.7)');
 
 	?>
 <style>
