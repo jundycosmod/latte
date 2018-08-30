@@ -1289,3 +1289,25 @@ input.searchform-button:active {
 		width: 100%;
 	}
 }
+
+/**
+* Overwrite bootstrap .container
+*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+    margin-left: 190px !important;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+    margin-left: 190px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+    margin-left: 190px !important;
+  }
+}
